@@ -63,36 +63,6 @@ function criarBarra(var_nome, var_avatar) {
   }, 400);
 
 
-// ... (todo o seu código do 'setInterval' termina aqui)
-  // ... (e a lógica dos 'checks' de mensagem)
-
-  /* === CÓDIGO DO BOTÃO VOLTAR AO INÍCIO - COMEÇO === */
-
-  // 1. Verifica se o botão já não existe DENTRO do 'elementoPai'
-  //    (Lembre-se: 'elementoPai' foi definido no topo do seu script)
-  if (!elementoPai.querySelector('#btnVoltarInicio')) {
-    
-    // 2. Cria o elemento <button>
-    let meuBotao = document.createElement('button');
-    
-    // 3. Define o ID (para o CSS encontrar) e o texto
-    meuBotao.id = 'btnVoltarInicio';
-    meuBotao.innerHTML = '🏠 Voltar ao Início';
-    
-    // 4. Define a ação de clique para reiniciar o bot
-    meuBotao.onclick = () => {
-      if (window.Typebot && window.Typebot.restart) {
-        window.Typebot.restart();
-      }
-    };
-    
-    // 5. Adiciona o botão DENTRO da "bolha" (Shadow DOM)
-    elementoPai.appendChild(meuBotao);
-  }
-  
-  /* === CÓDIGO DO BOTÃO VOLTAR AO INÍCIO - FIM === */
-
-
   // O seu código de carregar o CSS começa aqui:
   var cssId = 'myCss';  
   if (!document.getElementById(cssId)) {
