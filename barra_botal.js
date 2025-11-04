@@ -97,7 +97,7 @@ function criarBarra(var_nome, var_avatar) {
     link.id   = cssId;
     link.rel  = 'stylesheet';
     link.type = 'text/css';
-    link.href = 'https://fireprojectx.github.io/mlstudy/stylebot.css';
+    link.href = 'https://raw.githubusercontent.com/leandroluizp/type-scripts/refs/heads/main/stylebot.css';
     link.media = 'all';
     head.appendChild(link);
   }
