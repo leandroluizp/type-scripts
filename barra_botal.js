@@ -61,31 +61,34 @@ function criarBarra(var_nome, var_avatar) {
       }
     }
   }, 400);
-  /* === CÓDIGO DO BOTÃO VOLTAR AO INÍCIO - COMEÇO === */
+  /* === CÓDIGO DO BOTÃO VOLTAR AO INÍCIO - FIM === */
 
-  // Verifica se o botão já não existe DENTRO do elementoPai (na bolha)
-  if (!elementoPai.querySelector('#btnVoltarInicio')) {
+
+  /* --- Bloco de Carregamento do CSS (Versão Corrigida) --- */
+  
+  // 1. Define a variável 'head' (que eu apaguei por engano)
+  var head = document.getElementsByTagName("typebot-standard")[0].shadowRoot.querySelector('.typebot-container');
+  
+  // 2. Define o ID do nosso link CSS
+  var cssId = 'myCss';
+  
+  // 3. Verifica se o link JÁ NÃO EXISTE dentro da bolha
+  if (!head.querySelector('#' + cssId)) {
+    var link  = document.createElement('link');
+    link.id   = cssId;
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
     
-    // 1. Cria o elemento <button>
-    let meuBotao = document.createElement('button');
+    // 4. Carrega seu CSS com o "?v=2" para limpar o cache
+    link.href = 'https://raw.githubusercontent.com/leandroluizp/type-scripts/refs/heads/main/stylebot.css?v=2';
     
-    // 2. Define o ID (para o CSS encontrar) e o texto
-    meuBotao.id = 'btnVoltarInicio';
-    meuBotao.innerHTML = '🏠 Voltar ao Início'; // Pode mudar o texto/emoji
+    link.media = 'all';
     
-    // 3. Define a ação de clique para reiniciar o bot
-    meuBotao.onclick = () => {
-      if (window.Typebot && window.Typebot.restart) {
-        window.Typebot.restart();
-      }
-    };
-    
-    // 4. ADICIONA O BOTÃO DENTRO DA "BOLHA" (Shadow DOM)
-    //    Este é o passo crucial.
-    elementoPai.appendChild(meuBotao);
+    // 5. Adiciona o link ao 'head' (que agora existe)
+    head.appendChild(link);
   }
   
-  /* === CÓDIGO DO BOTÃO VOLTAR AO INÍCIO - FIM === */
+} // <-- Chave final da função criarBarra
 
   var cssId = 'myCss';  // <- Adicione o código ACIMA desta linha
   if (!document.getElementById(cssId)) {
