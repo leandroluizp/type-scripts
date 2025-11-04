@@ -215,33 +215,3 @@ margin: 0 30px 0 0;
   font-weight: 400;
   letter-spacing: 0;
 }
-/* === ESTILO DO BOTÃO VOLTAR AO INÍCIO === */
-
-#btnVoltarInicio {
-  /* Usamos 'position: absolute' porque ele vai viver
-    DENTRO do container principal do Typebot (o elementoPai),
-    e não na página principal (onde usaríamos 'fixed').
-  */
-  position: absolute; 
-  bottom: 25px;
-  right: 25px;
-  z-index: 9999; /* Garante que ele fique por cima de tudo */
-
-  /* Estilo (sinta-se à vontade para mudar) */
-  background-color: #555;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 18px;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-/* Efeito ao passar o mouse */
-#btnVoltarInicio:hover {
-  background-color: #333;
-  transform: scale(1.05);
-}
