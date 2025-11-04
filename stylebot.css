@@ -215,32 +215,30 @@ margin: 0 30px 0 0;
   font-weight: 400;
   letter-spacing: 0;
 }
+/* === ESTILO DO BOTÃO VOLTAR AO INÍCIO === */
 
-/* === CÓDIGO DO BOTÃO VOLTAR AO INÍCIO - FIM === */
+#btnVoltarInicio {
+  /* Posição Fixa DENTRO do container */
+  position: absolute; /* Usamos 'absolute' pois ele já está dentro do container pai */
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999; /* Garante que ele fique por cima de tudo */
 
+  /* Estilo (sinta-se à vontade para mudar) */
+  background-color: #555;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
 
-  /* --- Bloco de Carregamento do CSS (Versão Corrigida) --- */
-  
-  // 1. Define a variável 'head' (que eu apaguei por engano)
-  var head = document.getElementsByTagName("typebot-standard")[0].shadowRoot.querySelector('.typebot-container');
-  
-  // 2. Define o ID do nosso link CSS
-  var cssId = 'myCss';
-  
-  // 3. Verifica se o link JÁ NÃO EXISTE dentro da bolha
-  if (!head.querySelector('#' + cssId)) {
-    var link  = document.createElement('link');
-    link.id   = cssId;
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    
-    // 4. Carrega seu CSS com o "?v=2" para limpar o cache
-    link.href = 'https://raw.githubusercontent.com/leandroluizp/type-scripts/refs/heads/main/stylebot.css?v=2';
-    
-    link.media = 'all';
-    
-    // 5. Adiciona o link ao 'head' (que agora existe)
-    head.appendChild(link);
-  }
-  
-} // <-- Chave final da função criarBarra
+/* Efeito ao passar o mouse */
+#btnVoltarInicio:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
