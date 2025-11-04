@@ -80,7 +80,7 @@ function criarBarra(var_nome, var_avatar) {
     link.type = 'text/css';
     
     // 4. Carrega seu CSS com o "?v=2" para limpar o cache
-    link.href = 'https://raw.githubusercontent.com/leandroluizp/type-scripts/refs/heads/main/stylebot.css?v=2';
+    link.href = 'https://leandroluizp.github.io/type-scripts/stylebot.css';
     
     link.media = 'all';
     
