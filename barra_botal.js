@@ -62,11 +62,6 @@ function criarBarra(var_nome, var_avatar) {
     }
   }, 400);
 
-
-  // O seu código de carregar o CSS começa aqui:
-  var cssId = 'myCss';  
-  if (!document.getElementById(cssId)) {
-  // ... (etc)  
   var cssId = 'myCss';  // você pode codificar o caminho do css para gerar o id..
   if (!document.getElementById(cssId)) {
     var head  = document.getElementsByTagName("typebot-standard")[0].shadowRoot.querySelector('.typebot-container');
@@ -79,4 +74,5 @@ function criarBarra(var_nome, var_avatar) {
     head.appendChild(link);
   }
 }
-    
+ 
+
