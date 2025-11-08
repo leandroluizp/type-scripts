@@ -19,10 +19,10 @@
 /********** layout do chat **********/
 .typebot-chat-view > .flex:first-child {
   padding-top: 50px;
-  padding-bottom: 100px; /* aumentado para não colar em elementos fixos */
+  padding-bottom: 150px; /* +50% (antes 100px) */
 }
 .typebot-chat-view {
-  padding-bottom: 80px; /* espaço extra para o botão fixo no rodapé */
+  padding-bottom: 120px; /* +50% (antes 80px) */
 }
 .typebot-container {
   background-size: initial !important;
@@ -39,7 +39,7 @@
   width: 0; height: 0;
   border-style: solid;
   border-width: 0px 10px 10px 0;
-  border-color: transparent #fff transparent transparent; /* triângulo da bolha do host */
+  border-color: transparent #fff transparent transparent;
   top: 0; left: -10px;
 }
 
@@ -53,7 +53,7 @@
   width: 0; height: 0;
   border-style: solid;
   border-width: 0px 0 10px 10px;
-  border-color: transparent transparent transparent #e1ffc7; /* ajuste se usar outra cor de fundo */
+  border-color: transparent transparent transparent #e1ffc7;
   top: 0; right: -10px;
 }
 
@@ -79,7 +79,7 @@ typebot-standard { position: relative; z-index: 99; }
 .user-bar {
   width: 100%;
   height: 70px;
-  background: #0C182C;
+  background: #0C182C; /* barra escura */
   color: #fff;
   padding: 0;
   font-size: 24px;
@@ -140,4 +140,91 @@ iframe[src=""] {
 /********** badge de terceiros (remover se aplicável) **********/
 a#lite-badge { display: none !important; }
 
-/
+/********** espaçamento dos botões iniciais **********/
+.typebot-buttons { margin-top: 16px !important; }
+.typebot-buttons button { margin-bottom: 10px !important; }
+
+/********** botão fixo “Início” — alto contraste e maior **********/
+.btn-voltar-inicio {
+  position: fixed;
+  bottom: 24px; /* leve afastamento extra da borda */
+  right: 24px;
+  z-index: 1000;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 18px 36px;           /* +50% (antes 12px 24px) */
+  background: #0C182C;          /* fundo escuro para alto contraste */
+  color: #ffffff;               /* texto claro */
+  border: 2px solid #ffffff;    /* contorno branco para destacar sobre fundos escuros */
+  border-radius: 10px;
+
+  font-size: 21px;              /* +50% (antes 14px) */
+  line-height: 1.1;
+  font-weight: 700;             /* mais forte para legibilidade */
+  cursor: pointer;
+
+  box-shadow: 0 8px 24px rgba(12, 24, 44, 0.40);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+}
+.btn-voltar-inicio:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(12, 24, 44, 0.55);
+  background: #10213d;          /* um tom acima para hover */
+  border-color: #ffffff;
+}
+.btn-voltar-inicio:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(12, 24, 44, 0.45);
+}
+.btn-voltar-inicio:focus-visible {
+  outline: 3px solid #34B7F1;   /* anel de foco acessível */
+  outline-offset: 2px;
+}
+
+/* Ícone e texto internos do botão */
+.btn-voltar-inicio .icon {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+}
+.btn-voltar-inicio .icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+.btn-voltar-inicio .label {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/********** responsivo (mobile) **********/
+@media (max-width: 480px) {
+  .btn-voltar-inicio {
+    bottom: 18px; right: 18px;
+    padding: 14px 24px;  /* proporcional para telas pequenas */
+    font-size: 18px;     /* ligeiramente menor no mobile */
+    border-radius: 8px;
+    gap: 8px;
+  }
+  .btn-voltar-inicio .icon,
+  .btn-voltar-inicio .icon svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.3;
+  }
+
+  .typebot-chat-view > .flex:first-child {
+    padding-bottom: 180px; /* +50% (antes 120px) */
+  }
+}
