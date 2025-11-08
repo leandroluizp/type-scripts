@@ -59,7 +59,7 @@ function criarBarra(var_nome, var_avatar) {
         link.id = cssId;
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'https://leandroluizp.github.io/type-scripts/stylebot.css';
+        link.href = 'https://leandroluizp.github.io/type-scripts/stylebot_com_botao.css';
         link.media = 'all';
         head.appendChild(link);
     }
@@ -82,12 +82,7 @@ function criarBotaoVoltar() {
             const botaoVoltar = document.createElement('button');
             botaoVoltar.id = 'btn-voltar-inicio';
             botaoVoltar.className = 'btn-voltar-inicio';
-            botaoVoltar.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                <span>Voltar ao Início</span>
-            `;
+            botaoVoltar.innerHTML = `Início`;
             
             // Adiciona o evento de clique
             botaoVoltar.addEventListener('click', function() {
@@ -98,11 +93,7 @@ function criarBotaoVoltar() {
                 }
                 
                 // Reinicia o fluxo do typebot
-                // OPÇÃO 1: Recarrega a página
                 location.reload();
-                
-                // OPÇÃO 2: Dispara evento de reset (descomente se seu typebot tiver um método específico)
-                // window.typebot?.restart?.();
             });
             
             // Adiciona o botão ao container (dentro do shadow DOM)
