@@ -738,7 +738,6 @@ select.form-control {
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
-```css
 /********** check style **********/
 
 .typebot-host-bubble {
@@ -768,8 +767,8 @@ to { stroke-dashoffset: 0 }
 /********** check style **********/
 
 .typebot-chat-view > .flex:first-child {
-padding-top: 50px;
-padding-bottom: 50px;
+padding-top: var(--space-32);
+padding-bottom: var(--space-32);
 }
 
 .typebot-container {
@@ -790,7 +789,7 @@ border-style: solid;
 border-width: 0px var(--space-10) var(--space-10) 0;
 border-color: transparent var(--color-surface) transparent transparent;
 top: 0;
-left: -10px;
+left: calc(-1 * var(--space-10));
 }
 
 .typebot-guest-bubble {
@@ -805,11 +804,26 @@ height: 0;
 border-style: solid;
 border-width: var(--space-10) 0 var(--space-10) var(--space-10);
 border-color: transparent transparent transparent var(--color-surface);
-bottom: -10px;
-right: -10px;
+bottom: calc(-1 * var(--space-10));
+right: calc(-1 * var(--space-10));
 }
 
-/********** botão de voltar ao início **********/
+/********** AJUSTE PARA OS BOTÕES INICIAIS **********/
+
+.typebot-chat-view {
+    padding-bottom: var(--space-32);
+}
+
+/* Garante que os botões da página inicial tenham espaço */
+.typebot-buttons {
+    margin-top: var(--space-16) !important;
+}
+
+.typebot-buttons button {
+    margin-bottom: var(--space-10) !important;
+}
+
+/********** botão "Início" no rodapé **********/
 
 .btn-voltar-inicio {
     position: fixed;
@@ -817,18 +831,14 @@ right: -10px;
     right: var(--space-20);
     z-index: 1000;
     
-    display: flex;
-    align-items: center;
-    gap: var(--space-8);
-    
-    padding: var(--space-12) var(--space-16);
-    background: linear-gradient(135deg, var(--color-teal-300) 0%, var(--color-teal-400) 100%);
+    padding: var(--space-12) var(--space-24);
+    background: var(--color-primary);
     color: var(--color-btn-primary-text);
     border: none;
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-base);
     
     font-size: var(--font-size-base);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-semibold);
     cursor: pointer;
     
     box-shadow: var(--shadow-md);
@@ -840,18 +850,18 @@ right: -10px;
 .btn-voltar-inicio:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-    background: linear-gradient(135deg, var(--color-teal-400) 0%, var(--color-teal-300) 100%);
+    background: var(--color-primary-hover);
 }
 
 .btn-voltar-inicio:active {
     transform: translateY(0);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
+    background: var(--color-primary-active);
 }
 
-.btn-voltar-inicio svg {
-    width: var(--space-20);
-    height: var(--space-20);
-    stroke-width: 2.5;
+.btn-voltar-inicio:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
 }
 
 /* Responsivo para mobile */
@@ -859,18 +869,25 @@ right: -10px;
     .btn-voltar-inicio {
         bottom: var(--space-16);
         right: var(--space-16);
-        padding: var(--space-10) var(--space-12);
+        padding: var(--space-10) var(--space-16);
         font-size: var(--font-size-sm);
-    }
-    
-    .btn-voltar-inicio svg {
-        width: 18px;
-        height: 18px;
+        border-radius: var(--radius-sm);
     }
     
     .typebot-chat-view > .flex:first-child {
-        padding-top: var(--space-32);
+        padding-top: var(--space-24);
         padding-bottom: var(--space-32);
     }
+    
+    .typebot-chat-view {
+        padding-bottom: var(--space-24);
+    }
+    
+    .typebot-buttons {
+        margin-top: var(--space-12) !important;
+    }
+    
+    .typebot-buttons button {
+        margin-bottom: var(--space-8) !important;
+    }
 }
-```
