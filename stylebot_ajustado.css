@@ -18,7 +18,7 @@
 
 /********** layout do chat **********/
 .typebot-chat-view > .flex:first-child {
-  padding-top: 0px;
+  padding-top: 50px;
   padding-bottom: 100px; /* +50% (antes 100px) */
 }
 .typebot-chat-view {
@@ -155,7 +155,7 @@ a#lite-badge { display: none !important; }
 
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  
 
   padding: 12px 24px;           /* +50% (antes 12px 24px) */
   background: #0C182C;          /* fundo escuro para alto contraste */
@@ -177,13 +177,13 @@ a#lite-badge { display: none !important; }
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
-}
+}/*
 .btn-voltar-inicio:hover {
-  /*transform: translateY(-2px);*/
+  transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(12, 24, 44, 0.55);
-  background: #10213d;          /* um tom acima para hover */
+  background: #10213d;         
   border-color: #ffffff;
-}
+}*/
 .btn-voltar-inicio:active {
   transform: translateY(0);
   box-shadow: 0 6px 16px rgba(12, 24, 44, 0.45);
