@@ -87,6 +87,7 @@ typebot-standard { position: relative; z-index: 99; }
   z-index: 99999;
   display: block;
   top: 0;
+  margin:0;
 }
 .user-bar:after { content: ""; display: table; clear: both; }
 .user-bar div {
@@ -178,7 +179,7 @@ a#lite-badge { display: none !important; }
     "Helvetica Neue", sans-serif;
 }
 .btn-voltar-inicio:hover {
-  transform: translateY(-2px);
+  /*transform: translateY(-2px);*/
   box-shadow: 0 12px 28px rgba(12, 24, 44, 0.55);
   background: #10213d;          /* um tom acima para hover */
   border-color: #ffffff;
