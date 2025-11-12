@@ -18,8 +18,8 @@
 
 /********** layout do chat **********/
 .typebot-chat-view > .flex:first-child {
-  padding-top: 50px;
-  padding-bottom: 150px; /* +50% (antes 100px) */
+  padding-top: 0px;
+  padding-bottom: 100px; /* +50% (antes 100px) */
 }
 .typebot-chat-view {
   padding-bottom: 120px; /* +50% (antes 80px) */
@@ -147,21 +147,23 @@ a#lite-badge { display: none !important; }
 /********** botão fixo “Início” — alto contraste e maior **********/
 .btn-voltar-inicio {
   position: fixed;
-  bottom: 24px; /* leve afastamento extra da borda */
-  right: 24px;
+  bottom: 20px; /* leve afastamento extra da borda */
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
 
   display: inline-flex;
   align-items: center;
   gap: 10px;
 
-  padding: 18px 36px;           /* +50% (antes 12px 24px) */
+  padding: 12px 24px;           /* +50% (antes 12px 24px) */
   background: #0C182C;          /* fundo escuro para alto contraste */
   color: #ffffff;               /* texto claro */
-  border: 2px solid #ffffff;    /* contorno branco para destacar sobre fundos escuros */
+  border: 1.5px solid #ffffff;    /* contorno branco para destacar sobre fundos escuros */
   border-radius: 10px;
+  gap: 8px;
 
-  font-size: 21px;              /* +50% (antes 14px) */
+  font-size: 16 px;              /* +50% (antes 14px) */
   line-height: 1.1;
   font-weight: 700;             /* mais forte para legibilidade */
   cursor: pointer;
